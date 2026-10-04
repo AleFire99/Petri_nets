@@ -195,6 +195,21 @@ wheels = [
 ]
 
 [[package]]
+name = "automata-lib"
+version = "9.2.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "cached-method" },
+    { name = "frozendict" },
+    { name = "networkx" },
+    { name = "typing-extensions" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/3d/09/cd1948fc964cae9e18c04c9c791181a8deb94419c63729c22a64c7181881/automata_lib-9.2.0.tar.gz", hash = "sha256:9d7ddd6b3536aee86604e003d68229b30adb610c7d0e895b34e63eacb549b829", size = 67781, upload-time = "2026-01-02T01:52:50.592Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/1a/a6/166b21b655d343d9b6b174ad6489503870fb16b295a50abd863ff281df1b/automata_lib-9.2.0-py3-none-any.whl", hash = "sha256:d0da096e157c6a390a5830390a69f34e093787fe529787976235e85b3938bda5", size = 84939, upload-time = "2026-01-02T01:52:49.242Z" },
+]
+
+[[package]]
 name = "babel"
 version = "2.18.0"
 source = { registry = "https://pypi.org/simple" }
@@ -248,6 +263,15 @@ wheels = [
 [package.optional-dependencies]
 css = [
     { name = "tinycss2" },
+]
+
+[[package]]
+name = "cached-method"
+version = "0.1.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/85/57/f5796619b29cfbbce98b6027f9f92461a9c159a373566106a11b2bab1e07/cached_method-0.1.0.tar.gz", hash = "sha256:0958d0422a90e24c215fb61f9633fd9faf566c8f7d15478493989abef8699d73", size = 4032, upload-time = "2021-10-31T19:38:21.24Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a3/69/f4be248608758ebad3d5954bf468fc98a822c939afbb04f1eaaecfc6be1c/cached_method-0.1.0-py3-none-any.whl", hash = "sha256:a71720f7cab565131bb5e4189b6ca5902635435e0e017d0fd1261712d8c3dc0c", size = 4172, upload-time = "2021-10-31T19:38:17.726Z" },
 ]
 
 [[package]]
@@ -693,6 +717,15 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/02/01/248d44fbda9e78fa1a7b5a475194bef4c4a3e285db286419f3bb42f2efdf/fqdn-1.6.0.tar.gz", hash = "sha256:e39bf62e2a9481aa2cb780554fdfd944dd8ee5f230eb831684d539cbafed8de2", size = 130737, upload-time = "2026-09-28T05:43:35.482Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/15/d5/a8f9149b97cced9e1f4bff92ff0b6206120e2c853ae774d7020d6ecd8fa8/fqdn-1.6.0-py3-none-any.whl", hash = "sha256:6c793c312ccfa29981e1135b3ef5e1277ebe639731a6b0f7350d90e96e63f0b4", size = 12569, upload-time = "2026-09-28T05:43:33.951Z" },
+]
+
+[[package]]
+name = "frozendict"
+version = "2.4.7"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/90/b2/2a3d1374b7780999d3184e171e25439a8358c47b481f68be883c14086b4c/frozendict-2.4.7.tar.gz", hash = "sha256:e478fb2a1391a56c8a6e10cc97c4a9002b410ecd1ac28c18d780661762e271bd", size = 317082, upload-time = "2025-11-11T22:40:14.251Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/38/74/f94141b38a51a553efef7f510fc213894161ae49b88bffd037f8d2a7cb2f/frozendict-2.4.7-py3-none-any.whl", hash = "sha256:972af65924ea25cf5b4d9326d549e69a9a4918d8a76a9d3a7cd174d98b237550", size = 16264, upload-time = "2025-11-11T22:40:12.836Z" },
 ]
 
 [[package]]
@@ -2016,6 +2049,7 @@ dependencies = [
 
 [package.dev-dependencies]
 dev = [
+    { name = "automata-lib" },
     { name = "hypothesis" },
     { name = "ipykernel" },
     { name = "jupyter" },
@@ -2041,6 +2075,7 @@ requires-dist = [
 
 [package.metadata.requires-dev]
 dev = [
+    { name = "automata-lib", specifier = ">=9.2.0" },
     { name = "hypothesis", specifier = ">=6.168.3" },
     { name = "ipykernel", specifier = ">=7.4.0" },
     { name = "jupyter", specifier = ">=1.1.1" },
