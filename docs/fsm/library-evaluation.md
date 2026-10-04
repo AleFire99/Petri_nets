@@ -49,4 +49,4 @@ Based on documentation and what the spikes actually demonstrated.
 | Parallel (text styles) | `python-statemachine` | `State.Parallel`. |
 | Moore vs Mealy | plain Python tables + `python-statemachine` for Moore | Output models are a property of the design, not library features; keep them tiny and compare outputs. |
 
-`transitions` is not selected: it matches `python-statemachine` on most axes, lacks history and has less deterministic timers. `automata-lib` is the right tool for DFA equivalence checks, e.g. comparing Moore and Mealy machines, but is not needed yet. Total runtime dependencies for the FSM phase: `python-statemachine` and `sismic`.
+`transitions` is not selected: it matches `python-statemachine` on most axes, lacks history and has less deterministic timers. `automata-lib` is the right tool for DFA equivalence checks, e.g. comparing Moore and Mealy machines, and is used (dev dependency) to prove Moore and Mealy equivalence exactly in `tests/fsm/test_moore_mealy.py`. Total runtime dependencies for the FSM phase: `python-statemachine` and `sismic`.
