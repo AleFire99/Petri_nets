@@ -22,12 +22,18 @@ class TimedMachine(HierarchicalMachine):
 
 
 def main() -> None:
-    m = HierarchicalMachine(states=["off", WASHER, "paused"], initial="off", auto_transitions=False)
+    m = HierarchicalMachine(
+        states=["off", WASHER, "paused"], initial="off", auto_transitions=False
+    )
     m.add_transition("start", "off", "running")
     m.add_transition("filled", "running_fill", "running_wash")
     m.add_transition("soaked", "running_wash_soak", "running_wash_agitate")
-    m.add_transition("pause", "running", "paused")  # parent transition applies to all children
-    m.start(); m.filled(); m.soaked()
+    m.add_transition(
+        "pause", "running", "paused"
+    )  # parent transition applies to all children
+    m.start()
+    m.filled()
+    m.soaked()
     print("state:", m.state)
     try:
         m.pause()
@@ -37,11 +43,17 @@ def main() -> None:
 
     # Parallel regions: list of states as a state's initial/children
     p = HierarchicalMachine(
-        states=[{"name": "editing", "parallel": [
-            {"name": "bold", "states": ["off", "on"], "initial": "off"},
-            {"name": "italic", "states": ["off", "on"], "initial": "off"},
-        ]}],
-        initial="editing", auto_transitions=False,
+        states=[
+            {
+                "name": "editing",
+                "parallel": [
+                    {"name": "bold", "states": ["off", "on"], "initial": "off"},
+                    {"name": "italic", "states": ["off", "on"], "initial": "off"},
+                ],
+            }
+        ],
+        initial="editing",
+        auto_transitions=False,
     )
     print("parallel:", p.state)
 
