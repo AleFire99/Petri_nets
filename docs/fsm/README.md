@@ -12,4 +12,4 @@ Each design is a Markdown file with a description, use case, a Mermaid `stateDia
 | 6 | [Parallel](parallel.md) | orthogonal regions | text styling |
 | 7 | [Moore vs Mealy](moore-mealy.md) | output models | "11" detector |
 
-Next: [library evaluation](library-evaluation.md).
+Next: [library evaluation](library-evaluation.md) (spikes in `spikes/fsm/`).
