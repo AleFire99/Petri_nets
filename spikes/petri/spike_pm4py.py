@@ -1,5 +1,6 @@
 """Spike: PM4Py — build WF-nets, check soundness (woflan), reachability graph."""
 
+from pm4py.algo.analysis.woflan import algorithm as woflan
 from pm4py.objects.petri_net.obj import Marking, PetriNet
 from pm4py.objects.petri_net.utils import petri_utils as pu
 
@@ -19,7 +20,6 @@ def build(name: str, places: list[str], trans: list[str], arcs: list[tuple[str, 
 
 
 def main() -> None:
-    import pm4py
 
     sound = build(
         "sound",
@@ -53,7 +53,10 @@ def main() -> None:
         ],
     )
     for label, (net, im, fm) in (("sound", sound), ("unsound", unsound)):
-        print(label, pm4py.check_soundness(net, im, fm))
+        print(
+            label,
+            woflan.apply(net, im, fm, parameters={"return_asap_when_not_sound": True}),
+        )
 
 
 if __name__ == "__main__":
