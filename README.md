@@ -11,6 +11,8 @@ A learning repo for designing and evaluating finite state machines (FSMs) and Pe
 5. **Petri libraries**: [`docs/petri/library-evaluation.md`](docs/petri/library-evaluation.md) with spikes in [`spikes/petri/`](spikes/petri/).
 6. **Petri code**: [`src/petrilab/petri/`](src/petrilab/petri/) with tests in [`tests/petri/`](tests/petri/).
 
+7. **Demo notebooks**: [`notebooks/fsm/`](notebooks/fsm/) and [`notebooks/petri/`](notebooks/petri/) walk through each implementation interactively (`uv run jupyter lab`).
+
 ## Findings
 
 | Topic | Result |
