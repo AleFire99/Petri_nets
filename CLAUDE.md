@@ -14,3 +14,6 @@
 
 ## Git flow
 One feature branch per phase (`feat/…`, `docs/…`, `chore/…`), Conventional Commits, PR to `main`, squash merge.
+
+## CI
+`.github/workflows/ci.yml`: lint (ruff, format, mypy), tests, coherence (`uv lock --check`, `scripts/check_docs.py`, spikes run), Mermaid rendering. Run the first three locally before pushing; `uv run python scripts/check_docs.py` for docs.
