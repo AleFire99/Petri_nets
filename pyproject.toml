@@ -7,13 +7,16 @@ requires-python = ">=3.13"
 dependencies = [
     "networkx>=3.7",
     "numpy>=2.5.3",
-    "pm4py>=2.7.23.8",
     "python-statemachine>=3.2.1",
     "scipy>=1.18.1",
     "sismic>=1.6.13",
     "snakes>=0.9.33",
     "sympy>=1.14.0",
 ]
+
+[project.optional-dependencies]
+# PM4Py is AGPL v3; only needed for the soundness cross-check (is_sound_pm4py).
+soundness = ["pm4py>=2.7.23.8"]
 
 [build-system]
 requires = ["uv_build>=0.12.13,<0.13.0"]
@@ -26,6 +29,7 @@ dev = [
     "jupyter>=1.1.1",
     "mypy>=2.4.0",
     "nbformat>=5.11.1",
+    "pm4py>=2.7.23.8",
     "pytest>=9.1.1",
     "ruff>=0.16.10",
     "transitions>=0.9.3",

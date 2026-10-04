@@ -37,4 +37,6 @@ uv run ruff check
 uv run mypy src
 ```
 
+PM4Py is AGPL v3, so it is an optional extra used only for the soundness cross-check: `uv sync --extra soundness` (or `pip install 'petrilab[soundness]'`). It is part of the `dev` group, so the tests and CI always have it. The core package does not import it.
+
 Mermaid diagrams are fenced blocks (rendered by GitHub). To validate locally: `npx -y @mermaid-js/mermaid-cli -i docs/fsm/regular.md -o /tmp/out.md`.
