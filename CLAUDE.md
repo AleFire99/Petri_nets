@@ -9,6 +9,7 @@
 ## Layout
 - `src/petrilab/fsm/`, `src/petrilab/petri/` — implementations
 - `tests/` — pytest tests, mirroring `src/`
+- `spikes/` — throwaway library evaluations backing the docs
 - `docs/fsm/`, `docs/petri/` — designs and library evaluations (Markdown + fenced Mermaid; no committed images)
 
 ## Git flow
