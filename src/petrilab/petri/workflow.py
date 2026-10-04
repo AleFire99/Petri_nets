@@ -81,11 +81,12 @@ def to_pm4py(
 
 
 def is_sound_pm4py(net: PTNet, source: str = "i", sink: str = "o") -> bool:
-    import pm4py
+    from pm4py.algo.analysis.woflan import algorithm as woflan
 
     pm, im, fm = to_pm4py(net, source, sink)
-    verdict, _ = pm4py.check_soundness(pm, im, fm)
-    return bool(verdict)
+    return bool(
+        woflan.apply(pm, im, fm, parameters={"return_asap_when_not_sound": True})
+    )
 
 
 def parallel_review() -> PTNet:
