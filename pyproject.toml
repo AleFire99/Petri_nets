@@ -22,7 +22,10 @@ build-backend = "uv_build"
 [dependency-groups]
 dev = [
     "hypothesis>=6.168.3",
+    "ipykernel>=7.4.0",
+    "jupyter>=1.1.1",
     "mypy>=2.4.0",
+    "nbformat>=5.11.1",
     "pytest>=9.1.1",
     "ruff>=0.16.10",
     "transitions>=0.9.3",
