@@ -5,8 +5,14 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "networkx>=3.7",
+    "numpy>=2.5.3",
+    "pm4py>=2.7.23.8",
     "python-statemachine>=3.2.1",
+    "scipy>=1.18.1",
     "sismic>=1.6.13",
+    "snakes>=0.9.33",
+    "sympy>=1.14.0",
 ]
 
 [build-system]
@@ -15,6 +21,7 @@ build-backend = "uv_build"
 
 [dependency-groups]
 dev = [
+    "hypothesis>=6.168.3",
     "mypy>=2.4.0",
     "pytest>=9.1.1",
     "ruff>=0.16.10",

@@ -19,4 +19,4 @@ Firing rule: a transition is enabled in `M` if every input place has at least th
 | 7 | [Workflow nets](workflow.md) | WF-net soundness | sound vs unsound |
 | 8 | [Classic examples](examples.md) | producer/consumer, philosophers, mutex, traffic | deadlock freedom, invariants |
 
-Next: [library evaluation](library-evaluation.md).
+Next: [library evaluation](library-evaluation.md) (spikes in `spikes/petri/`).
