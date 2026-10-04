@@ -20,3 +20,7 @@ dev = [
     "ruff>=0.16.10",
     "transitions>=0.9.3",
 ]
+
+[[tool.mypy.overrides]]
+module = ["sismic.*", "snakes.*", "pm4py.*"]
+ignore_missing_imports = true
