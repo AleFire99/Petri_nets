@@ -1,11 +1,14 @@
 """Workflow-net checks and soundness (docs/petri/workflow.md)."""
 
+from typing import TYPE_CHECKING
+
 import networkx as nx
-from pm4py.objects.petri_net.obj import Marking as PmMarking
-from pm4py.objects.petri_net.obj import PetriNet as PmNet
-from pm4py.objects.petri_net.utils import petri_utils
 
 from petrilab.petri.model import PTNet, StateSpaceLimitError
+
+if TYPE_CHECKING:
+    from pm4py.objects.petri_net.obj import Marking as PmMarking
+    from pm4py.objects.petri_net.obj import PetriNet as PmNet
 
 
 def is_workflow_net(net: PTNet, source: str = "i", sink: str = "o") -> bool:
@@ -66,7 +69,16 @@ def is_sound(
 
 def to_pm4py(
     net: PTNet, source: str = "i", sink: str = "o"
-) -> tuple[PmNet, PmMarking, PmMarking]:
+) -> "tuple[PmNet, PmMarking, PmMarking]":
+    """Needs the optional ``soundness`` extra (PM4Py, AGPL v3)."""
+    try:
+        from pm4py.objects.petri_net.obj import Marking as PmMarking
+        from pm4py.objects.petri_net.obj import PetriNet as PmNet
+        from pm4py.objects.petri_net.utils import petri_utils
+    except ImportError as exc:
+        raise ImportError(
+            "PM4Py is not installed (AGPL v3, optional): pip install 'petrilab[soundness]'"
+        ) from exc
     pm = PmNet(net.name)
     places = {p: PmNet.Place(p) for p in net.places}
     pm.places.update(places.values())
