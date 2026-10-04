@@ -26,8 +26,17 @@ dev = [
     "pytest>=9.1.1",
     "ruff>=0.16.10",
     "transitions>=0.9.3",
+    "types-networkx>=3.6.1.20260911",
 ]
 
 [[tool.mypy.overrides]]
-module = ["sismic.*", "snakes.*", "pm4py.*"]
+module = ["sismic.*", "snakes.*", "pm4py.*", "sympy.*"]
 ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = [
+    "ignore::PendingDeprecationWarning:numpy.*",
+    "ignore::DeprecationWarning:pm4py.*",
+    "ignore::UserWarning:pm4py.*",
+]
