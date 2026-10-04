@@ -30,6 +30,6 @@ flowchart LR
 ```
 
 ## Flattened net
-Places `(Ordered, mid, Paid, Shipped)`, transitions `authorise: Ordered -> mid`, `capture: mid -> Paid`, `ship: Paid -> Shipped`. Initial `(1,0,0,0)`.
+Internal names are prefixed with the substitution transition's name. Places `(Ordered, Pay.mid, Paid, Shipped)`, transitions `Pay.authorise: Ordered -> Pay.mid`, `Pay.capture: Pay.mid -> Paid`, `ship: Paid -> Shipped`. Initial `(1,0,0,0)`.
 
 Reachable markings: a chain of 4, final (0,0,0,1) dead (terminal). 1-safe; P-invariant: sum of all places = 1.
