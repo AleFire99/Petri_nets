@@ -56,11 +56,12 @@ export function createPhilosophers(n: number, atomic: boolean): AnyStateMachine 
       putForks: assign({ forks: ({ context }, p: P) => set(context, p.forks, true) }),
     },
   }).createMachine({
+    /** @xstate-layout N4IgpgJg5mDOIC5gF8A0IB2B7CdGgAoBbAQwGMALASwzAEp8QAHLWKgFyqw0YA9EAjACZ0AT0FDkU5EA */
     id: `philosophers${n}${atomic ? 'Atomic' : 'Naive'}`,
     type: 'parallel',
     context: { forks: Array.from({ length: n }, () => true) },
     states: Object.fromEntries(Array.from({ length: n }, (_, i) => [`phil${i}`, region(i)])),
-  } as never);
+  } as never as never);
   return machine as unknown as AnyStateMachine;
 }
 
