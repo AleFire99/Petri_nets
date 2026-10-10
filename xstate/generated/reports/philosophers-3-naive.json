@@ -13,9 +13,5 @@
    ]
   }
  ],
- "blocking": 1,
- "invariants": [
-  "neighbours never eat together"
- ],
- "invariantViolations": 0
+ "blocking": 1
 }

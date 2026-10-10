@@ -4,9 +4,5 @@
  "stateCount": 7,
  "edgeCount": 16,
  "deadlocks": [],
- "blocking": 0,
- "invariants": [
-  "neighbours never eat together"
- ],
- "invariantViolations": 0
+ "blocking": 0
 }

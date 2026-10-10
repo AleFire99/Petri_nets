@@ -1,4 +1,4 @@
-# doorAlarm (docs/fsm/timed.md)
+# doorAlarm
 
 ```mermaid
 stateDiagram-v2

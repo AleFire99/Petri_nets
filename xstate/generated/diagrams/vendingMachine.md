@@ -1,4 +1,4 @@
-# vendingMachine (docs/fsm/extended.md)
+# vendingMachine
 
 ```mermaid
 stateDiagram-v2
