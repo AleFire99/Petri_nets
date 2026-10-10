@@ -1,4 +1,4 @@
-"""Hierarchical nets by flattening substitution transitions (docs/petri/hierarchical.md)."""
+"""Hierarchical nets by flattening substitution transitions (petri/docs/hierarchical.md)."""
 
 from dataclasses import dataclass
 

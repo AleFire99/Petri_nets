@@ -1,4 +1,4 @@
-"""Nets from the design docs (docs/petri/*.md)."""
+"""Nets from the design docs (petri/docs/*.md)."""
 
 from petrilab.petri.model import PTNet
 

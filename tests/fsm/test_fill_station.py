@@ -1,7 +1,7 @@
 """Replay the XState model's test vectors against the hand-written FillStation.
 
-Vectors come from `npm run export` in xstate/ (committed as
-xstate/generated/vectors/fill-station.json): one vector per transition of the
+Vectors come from `npm run export` in fsm/xstate/ (committed as
+fsm/xstate/generated/vectors/fill-station.json): one vector per transition of the
 verified model; each step states the expected state, Moore outputs and context.
 """
 
@@ -15,6 +15,7 @@ from petrilab.fsm.fill_station import FillStation
 
 VECTORS = (
     Path(__file__).resolve().parents[2]
+    / "fsm"
     / "xstate"
     / "generated"
     / "vectors"

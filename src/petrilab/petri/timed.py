@@ -1,4 +1,4 @@
-"""Time Petri net explorer with integer-time semantics (docs/petri/timed.md).
+"""Time Petri net explorer with integer-time semantics (petri/docs/timed.md).
 
 A transition with interval ``(eft, lft)`` may fire when it has been continuously enabled for ``c``
 time units with ``eft <= c <= lft``, and time cannot advance past ``lft`` while it is enabled.
