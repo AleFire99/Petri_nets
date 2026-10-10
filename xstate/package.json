@@ -1,0 +1,24 @@
+{
+  "name": "petrilab-xstate",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "XState v5 EFSM models of the petrilab designs: simulate, verify exhaustively, export vectors for the Python implementations",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "analyze": "tsx scripts/analyze.ts",
+    "export": "tsx scripts/export.ts",
+    "sim": "tsx scripts/simulate.ts",
+    "verify": "npm run typecheck && npm run export && npm run analyze && npm test"
+  },
+  "devDependencies": {
+    "@statelyai/inspect": "^0.7.2",
+    "@types/node": "^26.6.5",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.3",
+    "xstate": "^5.33.2"
+  }
+}

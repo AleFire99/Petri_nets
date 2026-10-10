@@ -1,0 +1,12 @@
+{
+ "machine": "philosophers4Atomic",
+ "bounded": false,
+ "stateCount": 7,
+ "edgeCount": 16,
+ "deadlocks": [],
+ "blocking": 0,
+ "invariants": [
+  "neighbours never eat together"
+ ],
+ "invariantViolations": 0
+}

@@ -1,0 +1,130 @@
+{
+ "machine": "doorAlarm",
+ "initial": {
+  "state": [
+   "closed"
+  ],
+  "outputs": [],
+  "context": {}
+ },
+ "vectors": [
+  {
+   "id": "T1",
+   "steps": [
+    {
+     "event": {
+      "type": "open"
+     },
+     "expect": {
+      "state": [
+       "open"
+      ],
+      "outputs": [],
+      "context": {}
+     }
+    }
+   ]
+  },
+  {
+   "id": "T2",
+   "steps": [
+    {
+     "event": {
+      "type": "open"
+     },
+     "expect": {
+      "state": [
+       "open"
+      ],
+      "outputs": [],
+      "context": {}
+     }
+    },
+    {
+     "event": {
+      "type": "close"
+     },
+     "expect": {
+      "state": [
+       "closed"
+      ],
+      "outputs": [],
+      "context": {}
+     }
+    }
+   ]
+  },
+  {
+   "id": "T3",
+   "steps": [
+    {
+     "event": {
+      "type": "open"
+     },
+     "expect": {
+      "state": [
+       "open"
+      ],
+      "outputs": [],
+      "context": {}
+     }
+    },
+    {
+     "wait": 30000,
+     "delay": "TIMEOUT",
+     "expect": {
+      "state": [
+       "alarm"
+      ],
+      "outputs": [
+       "SIREN"
+      ],
+      "context": {}
+     }
+    }
+   ]
+  },
+  {
+   "id": "T4",
+   "steps": [
+    {
+     "event": {
+      "type": "open"
+     },
+     "expect": {
+      "state": [
+       "open"
+      ],
+      "outputs": [],
+      "context": {}
+     }
+    },
+    {
+     "wait": 30000,
+     "delay": "TIMEOUT",
+     "expect": {
+      "state": [
+       "alarm"
+      ],
+      "outputs": [
+       "SIREN"
+      ],
+      "context": {}
+     }
+    },
+    {
+     "event": {
+      "type": "close"
+     },
+     "expect": {
+      "state": [
+       "closed"
+      ],
+      "outputs": [],
+      "context": {}
+     }
+    }
+   ]
+  }
+ ]
+}

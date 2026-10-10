@@ -1,0 +1,15 @@
+{
+ "machine": "fillStation",
+ "bounded": false,
+ "stateCount": 50,
+ "edgeCount": 135,
+ "deadlocks": [],
+ "blocking": 0,
+ "invariants": [
+  "inlet and outlet never open together",
+  "heater only with valves closed",
+  "no outputs in emergency",
+  "retry counter bounded"
+ ],
+ "invariantViolations": 0
+}

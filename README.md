@@ -11,7 +11,9 @@ A learning repo for designing and evaluating finite state machines (FSMs) and Pe
 5. **Petri libraries**: [`docs/petri/library-evaluation.md`](docs/petri/library-evaluation.md) with spikes in [`spikes/petri/`](spikes/petri/).
 6. **Petri code**: [`src/petrilab/petri/`](src/petrilab/petri/) with tests in [`tests/petri/`](tests/petri/).
 
-7. **Demo notebooks**: [`notebooks/fsm/`](notebooks/fsm/) and [`notebooks/petri/`](notebooks/petri/) walk through each implementation interactively (`uv run jupyter lab`).
+7. **XState design layer**: [`docs/fsm/xstate.md`](docs/fsm/xstate.md) with the TypeScript subproject [`xstate/`](xstate/README.md): visual editing, exhaustive checks, test vectors replayed against the Python FSMs, a combined automation example ([fill station](docs/fsm/fill-station.md)).
+
+8. **Demo notebooks**: [`notebooks/fsm/`](notebooks/fsm/) and [`notebooks/petri/`](notebooks/petri/) walk through each implementation interactively (`uv run jupyter lab`).
 
 ## Findings
 
@@ -25,6 +27,8 @@ A learning repo for designing and evaluating finite state machines (FSMs) and Pe
 | Cross-checks | The hand-written firing rule agrees with SNAKES on state/edge/dead counts; own soundness check agrees with PM4Py. |
 | Timed nets | With `serve` in [1,2] and `timeout` in [3,4], `timeout` never fires; it does with overlapping intervals. |
 | Stochastic nets | M/M/1/K steady state from the CTMC matches the closed form (8, 4, 2, 1)/15. |
+| XState vs Petri | Dining philosophers as parallel EFSM with forks in context: same state, edge and dead-state counts as the Petri net for n = 2, 3, 4. |
+| XState vectors | Model-generated vectors (one per transition) pass on sismic `DoorAlarm`, python-statemachine `VendingMachine` and hand-written `FillStation`. |
 
 Not adopted: SMT (`z3`) and external model checkers (TINA, LoLA, Romeo); they matter once state spaces stop fitting in memory.
 
@@ -35,6 +39,8 @@ uv sync
 uv run pytest
 uv run ruff check
 uv run mypy src
+
+cd xstate && npm ci && npm run verify   # XState models (Node 22)
 ```
 
 PM4Py is AGPL v3, so it is an optional extra used only for the soundness cross-check: `uv sync --extra soundness` (or `pip install 'petrilab[soundness]'`). It is part of the `dev` group, so the tests and CI always have it. The core package does not import it.
