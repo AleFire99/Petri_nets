@@ -1,8 +1,8 @@
-"""Replay XState-generated test vectors against the Python implementations.
+"""Replay the XState model's test vectors against the hand-written FillStation.
 
-Vectors come from `npm run export` in xstate/ (committed under xstate/generated/).
-Each vector is a path through the verified model; every step states the expected
-leaf state, Moore outputs and context. One vector per explored transition.
+Vectors come from `npm run export` in xstate/ (committed as
+xstate/generated/vectors/fill-station.json): one vector per transition of the
+verified model; each step states the expected state, Moore outputs and context.
 """
 
 import json
@@ -11,24 +11,23 @@ from typing import Any
 
 import pytest
 
-from petrilab.fsm.extended import VendingMachine
 from petrilab.fsm.fill_station import FillStation
-from petrilab.fsm.timed import DoorAlarm
 
-GENERATED = Path(__file__).resolve().parents[2] / "xstate" / "generated"
+VECTORS = (
+    Path(__file__).resolve().parents[2]
+    / "xstate"
+    / "generated"
+    / "vectors"
+    / "fill-station.json"
+)
 
 
-def vectors(slug: str) -> list[dict[str, Any]]:
-    data = json.loads((GENERATED / slug / "vectors.json").read_text())
-    vs: list[dict[str, Any]] = data["vectors"]
+def vectors() -> list[dict[str, Any]]:
+    vs: list[dict[str, Any]] = json.loads(VECTORS.read_text())["vectors"]
     return vs
 
 
-def ids(v: dict[str, Any]) -> str:
-    return str(v["id"])
-
-
-@pytest.mark.parametrize("vector", vectors("fill-station"), ids=ids)
+@pytest.mark.parametrize("vector", vectors(), ids=lambda v: str(v["id"]))
 def test_fill_station_matches_model(vector: dict[str, Any]) -> None:
     fs = FillStation()
     for step in vector["steps"]:
@@ -42,24 +41,7 @@ def test_fill_station_matches_model(vector: dict[str, Any]) -> None:
         assert {"retries": fs.retries, "lastFault": fs.last_fault} == exp["context"]
 
 
-@pytest.mark.parametrize("vector", vectors("door-alarm"), ids=ids)
-def test_door_alarm_matches_model(vector: dict[str, Any]) -> None:
-    door = DoorAlarm()
-    for step in vector["steps"]:
-        if "wait" in step:
-            door.advance(step["wait"] / 1000)  # model in ms, sismic in s
-        else:
-            door.send(step["event"]["type"])
-        assert [door.state] == step["expect"]["state"], step
-
-
-@pytest.mark.parametrize("vector", vectors("vending-machine"), ids=ids)
-def test_vending_machine_matches_model(vector: dict[str, Any]) -> None:
-    sm = VendingMachine()
-    for step in vector["steps"]:
-        event = dict(step["event"])
-        sm.send(event.pop("type"), **event)
-        state = next(iter(sm.configuration)).id
-        ctx = {"credit": sm.credit, "dispensed": sm.dispensed, "rejected": sm.rejected}
-        assert [state] == step["expect"]["state"], step
-        assert ctx == step["expect"]["context"], step
+def test_unknown_event_is_ignored() -> None:
+    fs = FillStation()
+    fs.send("KICK")
+    assert fs.state == "idle"

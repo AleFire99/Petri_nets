@@ -1,15 +1,13 @@
 [project]
 name = "petrilab"
 version = "0.1.0"
-description = "Add your description here"
+description = "Petri nets in Python, FSMs designed and verified in XState (see xstate/)"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "networkx>=3.7",
     "numpy>=2.5.3",
-    "python-statemachine>=3.2.1",
     "scipy>=1.18.1",
-    "sismic>=1.6.13",
     "snakes>=0.9.33",
     "sympy>=1.14.0",
 ]
@@ -24,7 +22,6 @@ build-backend = "uv_build"
 
 [dependency-groups]
 dev = [
-    "automata-lib>=9.2.0",
     "hypothesis>=6.168.3",
     "ipykernel>=7.4.0",
     "jupyter>=1.1.1",
@@ -33,12 +30,11 @@ dev = [
     "pm4py>=2.7.23.8",
     "pytest>=9.1.1",
     "ruff>=0.16.10",
-    "transitions>=0.9.3",
     "types-networkx>=3.6.1.20260911",
 ]
 
 [[tool.mypy.overrides]]
-module = ["sismic.*", "snakes.*", "pm4py.*", "sympy.*"]
+module = ["snakes.*", "pm4py.*", "sympy.*"]
 ignore_missing_imports = true
 
 [tool.pytest.ini_options]
