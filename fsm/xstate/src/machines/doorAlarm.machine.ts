@@ -12,6 +12,7 @@ export const doorAlarm = setup({
   },
   delays: { TIMEOUT: DOOR_TIMEOUT_MS },
 }).createMachine({
+  /** @xstate-layout N4IgpgJg5mDOIC5QQPYoE4EEA2BDdAtgHQDG2KskAxCgA5gB2A2gAwC6iotFAlgC48UDTiAAeiAIwB2AJwAaEAE9EAJgCsKolLUBfHQtQYc+YnUZUyFMKw5IQ3WP0HC74hNPlLVLTer0G0LDxCIjMGKlFYPlw+MCJcADNY9AAKABUASQBZAFEAeQBVNIBKKkMgk1D6ZnYRBychETcAFh8iAA4Vdol1BWUEFQkJDoBmMfGJseb-EHLjENxgggtyShs63gFG10RmtRYiHrU+xG6iXRmGFAg4ETmljcctl1A3AFoANhOET6IWf-+zQkHyk3Q+EhkIwuASMS1Iq0gjwaLzEuxU3xkww+fn0s0C81M1SRzyaqnaB063V6XgGEgpkwZI2muPulUWJmJzlJCDUamGMjUIyOGIOLHajMmej0QA */
   id: 'doorAlarm',
   initial: 'closed',
   states: {

@@ -1,5 +1,6 @@
 import type { AnyStateMachine } from 'xstate';
 import { createPhilosophers, philosopherEvents } from '../machines/philosophers.machine';
+import { philosophers2Atomic, philosophers2Naive } from '../machines/philosophers2.machine';
 import type { MachineSpec } from './types';
 
 /** Same protocols as dining_philosophers(n, atomic=...) in src/petrilab/petri/examples.py. */
@@ -21,3 +22,12 @@ export function philosophersSpec(n: number, atomic: boolean): MachineSpec<AnySta
     diagram: false,
   };
 }
+
+/** Literal n=2 machines for the visual editor; test/philosophers2.test.ts ties them to the factory. */
+export const philosophers2Specs: MachineSpec<AnyStateMachine>[] = [false, true].map((atomic) => ({
+  ...philosophersSpec(2, atomic),
+  slug: `philosophers-2-${atomic ? 'atomic' : 'naive'}-literal`,
+  name: `philosophers n=2 ${atomic ? 'atomic' : 'naive'} (literal)`,
+  machine: (atomic ? philosophers2Atomic : philosophers2Naive) as unknown as AnyStateMachine,
+  report: false,
+}));
