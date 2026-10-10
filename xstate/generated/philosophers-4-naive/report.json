@@ -1,0 +1,22 @@
+{
+ "machine": "philosophers4Naive",
+ "bounded": false,
+ "stateCount": 34,
+ "edgeCount": 88,
+ "deadlocks": [
+  {
+   "state": "{\"phil0\":\"hasLeft\",\"phil1\":\"hasLeft\",\"phil2\":\"hasLeft\",\"phil3\":\"hasLeft\"} {\"forks\":[false,false,false,false]}",
+   "trace": [
+    "takeLeft0",
+    "takeLeft1",
+    "takeLeft2",
+    "takeLeft3"
+   ]
+  }
+ ],
+ "blocking": 1,
+ "invariants": [
+  "neighbours never eat together"
+ ],
+ "invariantViolations": 0
+}

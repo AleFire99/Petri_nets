@@ -1,0 +1,12 @@
+{
+ "machine": "doorAlarm",
+ "bounded": false,
+ "stateCount": 3,
+ "edgeCount": 4,
+ "deadlocks": [],
+ "blocking": 0,
+ "invariants": [
+  "siren only in alarm"
+ ],
+ "invariantViolations": 0
+}

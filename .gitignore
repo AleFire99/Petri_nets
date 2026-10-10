@@ -6,3 +6,6 @@ __pycache__/
 .ruff_cache/
 dist/
 *.egg-info/
+
+# xstate/ (Node)
+node_modules/
