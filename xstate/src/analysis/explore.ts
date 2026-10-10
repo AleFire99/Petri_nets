@@ -13,7 +13,7 @@ import {
 /**
  * Exhaustive state-space explorer for XState v5 machines.
  *
- * Breadth-first search over (state value + context). In every reached
+ * Breadth-first search over (state value + context + history memory). In every reached
  * snapshot it tries every event listed in the spec (payload variants are
  * separate events) and every armed timer (`after` -> `xstate.after.*` event).
  *
@@ -125,8 +125,14 @@ export function explore<M extends AnyStateMachine>(
   machine: M,
   opts: ExploreOptions<M>,
 ): ExploreResult<M> {
+  // State identity = value + context + remembered history + status.
+  // History matters: two `paused` states remembering different children behave differently.
+  const history = (s: Snap<M>) => {
+    const hv = (s as unknown as { historyValue?: Record<string, { id: string }[]> }).historyValue ?? {};
+    return Object.fromEntries(Object.entries(hv).map(([k, nodes]) => [k, nodes.map((n) => n.id).sort()]));
+  };
   const key = (s: Snap<M>) =>
-    `${stable(s.value)}|${stable(opts.abstract ? opts.abstract(s) : s.context)}|${s.status}`;
+    `${stable(s.value)}|${stable(opts.abstract ? opts.abstract(s) : s.context)}|${stable(history(s))}|${s.status}`;
   const maxStates = opts.maxStates ?? 50_000;
   const maxDepth = opts.maxDepth ?? Number.POSITIVE_INFINITY;
 
@@ -227,8 +233,11 @@ export function explore<M extends AnyStateMachine>(
   for (const s of snaps.values()) {
     for (const n of getStateNodes(machine.root, s.value)) visited.add(n.id);
   }
-  const allIds = [...(machine as unknown as { idMap: Map<string, unknown> }).idMap.keys()];
-  const unreachableStateNodes = allIds.filter((id) => id !== machine.root.id && !visited.has(id));
+  // History pseudo-states are never "active", so they are not reachability targets.
+  const idMap = (machine as unknown as { idMap: Map<string, { type: string }> }).idMap;
+  const unreachableStateNodes = [...idMap.entries()]
+    .filter(([id, node]) => id !== machine.root.id && node.type !== 'history' && !visited.has(id))
+    .map(([id]) => id);
 
   return {
     machine: machine.id,

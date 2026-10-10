@@ -48,5 +48,5 @@ stateDiagram-v2
 
 For input `0110111`: Mealy emits `0010011` immediately on the transition; Moore needs one extra state (C) and its output is observed after the transition, so the sequences match when read after each step.
 
-## Properties to test
-Both machines produce the same output stream for random bit strings.
+## In XState
+Machine: [`elevenDetector.machine.ts`](../../xstate/src/machines/elevenDetector.machine.ts) (elevenDetector). Scenario tests: [`designs.unit.test.ts`](../../xstate/test/designs.unit.test.ts). Both detectors run as parallel regions of one machine on the same bits. The invariant "Moore and Mealy outputs agree" holds in all 3 reachable product states: an exact equivalence proof. A Moore variant with the output on the wrong state is caught after the single input `one`.

@@ -1,0 +1,17 @@
+{
+ "machine": "philosophers3Naive",
+ "bounded": false,
+ "stateCount": 14,
+ "edgeCount": 27,
+ "deadlocks": [
+  {
+   "state": "{\"phil0\":\"hasLeft\",\"phil1\":\"hasLeft\",\"phil2\":\"hasLeft\"} {\"forks\":[false,false,false]}",
+   "trace": [
+    "takeLeft0",
+    "takeLeft1",
+    "takeLeft2"
+   ]
+  }
+ ],
+ "blocking": 1
+}

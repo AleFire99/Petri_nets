@@ -1,0 +1,8 @@
+{
+ "machine": "philosophers3Atomic",
+ "bounded": false,
+ "stateCount": 4,
+ "edgeCount": 6,
+ "deadlocks": [],
+ "blocking": 0
+}

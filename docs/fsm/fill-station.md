@@ -48,5 +48,5 @@ Inlet and outlet never open together; heater only with both valves closed; no ou
 
 ## Artefacts
 - Model: [`fillStation.machine.ts`](../../xstate/src/machines/fillStation.machine.ts), checks in [`fillStation.checks.ts`](../../xstate/src/specs/fillStation.checks.ts).
-- Generated: [Mermaid](../../xstate/generated/fill-station/diagram.md), [vectors](../../xstate/generated/fill-station/vectors.json) (135, one per transition), [ST skeleton](../../xstate/generated/fill-station/FB_fillStation.st).
-- Python: [`fill_station.py`](../../src/petrilab/fsm/fill_station.py), proven against the vectors in [`test_xstate_vectors.py`](../../tests/fsm/test_xstate_vectors.py).
+- Generated: [Mermaid](../../xstate/generated/diagrams/fillStation.md), [vectors](../../xstate/generated/vectors/fill-station.json) (135, one per transition), [ST skeleton](../../xstate/generated/st/FB_fillStation.st).
+- Python: [`fill_station.py`](../../src/petrilab/fsm/fill_station.py), proven against the vectors in [`test_fill_station.py`](../../tests/fsm/test_fill_station.py).

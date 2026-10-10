@@ -23,5 +23,6 @@ export const fillStationSpec: MachineSpec<typeof fillStation> = {
     'retry counter bounded': (s) => s.context.retries <= 2,
   },
   expect: { deadlocks: 0, blocking: 0 },
+  vectors: true, // replayed by tests/fsm/test_fill_station.py
   codegen: { st: true },
 };

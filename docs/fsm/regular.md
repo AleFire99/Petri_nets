@@ -39,5 +39,5 @@ stateDiagram-v2
 | Unlocked | push | Locked |
 | Unlocked | coin | Unlocked |
 
-## Properties to test
-Every listed transition works; any other `(state, event)` pair is rejected (traffic light has only `next`, so every pair is valid).
+## In XState
+Machine: [`regular.machine.ts`](../../xstate/src/machines/regular.machine.ts) (trafficLight, turnstile). Scenario tests: [`designs.unit.test.ts`](../../xstate/test/designs.unit.test.ts). Every listed transition works; unknown events are ignored (XState does not raise). Checked: exactly one lamp lit, release only when unlocked, red/locked always reachable.
