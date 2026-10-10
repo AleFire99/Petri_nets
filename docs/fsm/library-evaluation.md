@@ -1,65 +1,20 @@
-# FSM library evaluation
+# FSM library evaluation (decision record)
 
-Versions and release dates were checked on PyPI on 2026-10-04. Spike code that exercises the features lives in [`spikes/fsm/`](../../spikes/fsm/) (run with `uv run python spikes/fsm/spike_<lib>.py`).
+## Decision (2026-10-10)
+Design, simulate and verify every FSM in [XState v5](https://www.npmjs.com/package/xstate) (5.33.2; v6 is alpha only). Implement in the target language by hand and prove it against model-generated test vectors. Workflow: [xstate.md](xstate.md).
 
-## Candidates
+## Why
+| Need | XState v5 | Best Python option found |
+|------|-----------|--------------------------|
+| Visual editing | VS Code extension and Stately Studio edit the diagram and write code back | none |
+| Exhaustive checks (deadlock, blocking, invariants) | `transition()` is pure, so every state can be enumerated | none; libraries only execute |
+| Deterministic time | `SimulatedClock` | sismic only |
+| Hierarchy, history, parallel, guards, context | all native | python-statemachine 3 (no simulated clock) |
+| Typing | `setup({ types })` | python-statemachine typed |
 
-| Library | Version (release) | Notes |
-|---------|-------------------|-------|
-| [`transitions`](https://pypi.org/project/transitions/) | 0.9.3 (2025-07) | Mature, callback-centric; `HierarchicalMachine`, `Timeout` state feature, parallel states, graph extensions. Stable but slower release cadence. |
-| [`python-statemachine`](https://pypi.org/project/python-statemachine/) | 3.2.1 (2026-08) | v3 added `StateChart`: compound, parallel, history, delayed events, SCXML-style semantics, Mermaid/Dot export, typed. Actively maintained. |
-| [`sismic`](https://pypi.org/project/sismic/) | 1.6.13 (2026-09) | Full UML/SCXML-style statecharts in YAML; simulated clock; contracts and *property statecharts* for runtime verification; PlantUML export. |
-| [`automata-lib`](https://pypi.org/project/automata-lib/) | 9.2.0 (2026-01) | Formal automata theory (DFA/NFA/PDA/TM): equivalence, minimisation. No hierarchy/guards/time. Useful for *analysing* flat FSMs, not for modelling statecharts. |
-| `xstate-python` | not on PyPI | Does not exist as a published package; rejected. |
-| [`statesman`](https://pypi.org/project/statesman/) | 1.0.5 (2024-05) | Async, `<3.13` only; stale; rejected. |
-| `pytransitions` | 0.9.2 (2024-12) | Same project as `transitions` (extensions are bundled in it); not a separate choice. |
+## What was tried first (2026-10-04, removed 2026-10-10)
+Python implementations of designs 1–7 used `python-statemachine` 3.2.1 (hierarchy, history, parallel, guards, Mermaid export) and `sismic` 1.6.13 (the only one with a simulated clock, used for the timed design). `transitions` 0.9.3 was rejected: no history, real wall-clock timers. `automata-lib` 9.2.0 proved Moore/Mealy equivalence by DFA equality; the XState product-machine check now gives the same exact proof. Before removal, XState test vectors were replayed on the sismic door alarm (4/4) and the python-statemachine vending machine (129/129): the models agreed. The code is in git history before the commit that removed it.
 
-## Criteria matrix
-
-Based on documentation and what the spikes actually demonstrated.
-
-| Criterion | transitions | python-statemachine 3 | sismic | automata-lib |
-|-----------|:-----------:|:---------------------:|:------:|:------------:|
-| Flat FSM | yes | yes | yes | yes (DFA/NFA) |
-| Hierarchy | yes (`HierarchicalMachine`) | yes (`State.Compound`) | yes | no |
-| History (shallow/deep) | **no** (hand-rolled) | yes (`HistoryState`, spike OK) | yes (`shallow/deep history`, spike OK) | no |
-| Guards + context | yes (`conditions`, model attrs) | yes (`cond=`, any attrs) | yes (Python expressions + context) | no |
-| Timed transitions | yes (`Timeout`, real `threading.Timer`) | delayed events, **real clock only** | yes, **`SimulatedClock`** (`after(n)`) | no |
-| Parallel regions | yes (`parallel=`) | yes (`State.Parallel`) | yes (`parallel states`) | no |
-| Diagram export | graphviz/markup | **Mermaid**, Dot | PlantUML | graphviz |
-| Typing | partial stubs | typed, `py.typed` | partial | typed |
-| Verification support | none | none | contracts + property statecharts | equivalence, emptiness |
-| Maintenance | moderate | active | active | active |
-| Definition style | Python dicts / calls | Python class DSL | YAML (external) | Python objects |
-
-## Findings from the spikes
-- **python-statemachine**: nested class DSL is concise and reads like the diagram; deep history restored `wash.agitate` correctly; parallel regions worked. Gotchas: state ids must be globally unique (two `off` states in different regions collided silently in the configuration), and a state with no outgoing transitions needs to be `final`. Mermaid export works out of the box.
-- **sismic**: YAML statecharts passed the timed test with a `SimulatedClock` (no alarm at t=29, alarm at t=30) and deep history restore. Most verbose, but the best test story for time.
-- **transitions**: hierarchy, parallel and timeout worked; there is no history support, and timeouts are real wall-clock timers, which makes deterministic tests awkward.
-
-## Decision
-
-| Design | Library | Why |
-|--------|---------|-----|
-| Regular (traffic light, turnstile) | `python-statemachine` | Simplest declarative API; invalid events raise. |
-| Hierarchical (media player) | `python-statemachine` | Compound states, parent transitions. |
-| Extended (vending machine) | `python-statemachine` | Guards/actions as methods using plain attributes for context. |
-| Timed (door alarm) | `sismic` | Only library with an injectable fake clock. |
-| History (washing machine) | `python-statemachine` | Native shallow and deep history. |
-| Parallel (text styles) | `python-statemachine` | `State.Parallel`. |
-| Moore vs Mealy | plain Python tables + `python-statemachine` for Moore | Output models are a property of the design, not library features; keep them tiny and compare outputs. |
-
-`transitions` is not selected: it matches `python-statemachine` on most axes, lacks history and has less deterministic timers. `automata-lib` is the right tool for DFA equivalence checks, e.g. comparing Moore and Mealy machines, and is used (dev dependency) to prove Moore and Mealy equivalence exactly in `tests/fsm/test_moore_mealy.py`. Total runtime dependencies for the FSM phase: `python-statemachine` and `sismic`.
-
-## Addendum: XState (TypeScript) as design layer
-
-Checked on npm on 2026-10-10: [`xstate`](https://www.npmjs.com/package/xstate) 5.33.2 (v6 is alpha only). Not a Python library, so it does not replace the choices above; it sits in front of them. What it adds that no Python candidate has:
-
-| Criterion | XState v5 |
-|-----------|-----------|
-| Visual editing | VS Code extension and Stately Studio edit the machine as a diagram and write code back |
-| Pure transition function | `transition(machine, snapshot, event)` without side effects or timers: enables exhaustive exploration |
-| Deterministic time | `SimulatedClock`, like sismic |
-| Typing | `setup({ types })`; typegen is v4 only and not needed |
-
-Decision: design and verify in XState, implement in Python (or ST / C++), prove equivalence with generated test vectors. Details and results: [xstate.md](xstate.md).
+Gotchas worth keeping:
+- python-statemachine state ids must be globally unique, even across parallel regions.
+- XState ignores events without a transition; python-statemachine (with `allow_event_without_transition = False`) raises.

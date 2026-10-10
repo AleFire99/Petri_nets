@@ -24,5 +24,5 @@ stateDiagram-v2
 | HasCredit | select | credit < price | none | HasCredit |
 | HasCredit | refund | — | credit = 0 | Idle |
 
-## Properties to test
-Guard blocks under-funded purchase; credit never negative; change retained after purchase; refund zeroes credit.
+## In XState
+Machine: [`vendingMachine.machine.ts`](../../xstate/src/machines/vendingMachine.machine.ts) (vendingMachine). Scenario tests: [`designs.unit.test.ts`](../../xstate/test/designs.unit.test.ts). Guard blocks under-funded purchase; change retained after purchase; refund zeroes credit. Checked (bounded, 4 events deep, coins 0/25/50/100): credit never negative, idle means no credit, `has_credit` means credit > 0.

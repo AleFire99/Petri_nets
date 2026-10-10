@@ -36,3 +36,6 @@ stateDiagram-v2
 | Underline | toggle_underline | UnderlineOff <-> UnderlineOn |
 
 The active configuration is a tuple, e.g. `(BoldOn, ItalicOff, UnderlineOn)`. Toggling one region leaves the others unchanged.
+
+## In XState
+Machine: [`textStyle.machine.ts`](../../xstate/src/machines/textStyle.machine.ts) (textStyle). Scenario tests: [`designs.unit.test.ts`](../../xstate/test/designs.unit.test.ts). Toggles are independent; all 8 style combinations are reached (8 states, 24 transitions).

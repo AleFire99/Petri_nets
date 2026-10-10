@@ -29,5 +29,5 @@ stateDiagram-v2
 | On.Playing, On.Paused | stop | On.Stopped |
 | On (any child) | power_off | Off |
 
-## Properties to test
-`power_off` works from each child; `play` while `Off` is invalid; re-entering `On` starts at `Stopped`.
+## In XState
+Machine: [`mediaPlayer.machine.ts`](../../xstate/src/machines/mediaPlayer.machine.ts) (mediaPlayer). Scenario tests: [`designs.unit.test.ts`](../../xstate/test/designs.unit.test.ts). `power_off` works from each child; `play` while `off` does nothing; re-entering `on` starts at `stopped`. Checked: audio only while playing, `off` always reachable.

@@ -41,3 +41,6 @@ Variants of `resume`:
 | Running | pause | Paused |
 | Paused | resume | Running (history) |
 | Running, Paused | stop | Off |
+
+## In XState
+Machine: [`washer.machine.ts`](../../xstate/src/machines/washer.machine.ts) (washer (input `history`: deep / shallow / none)). Scenario tests: [`designs.unit.test.ts`](../../xstate/test/designs.unit.test.ts). Resume after `agitate` gives `agitate` (deep), `soak` (shallow), `fill` (none). Checked for each kind: drum and valve never on together, `off` always reachable. Remembered history is part of state identity in the explorer (29 states, not 6).
