@@ -1,7 +1,7 @@
 [project]
 name = "petrilab"
 version = "0.1.0"
-description = "Petri nets in Python, FSMs designed and verified in XState (see xstate/)"
+description = "Petri nets in Python, FSMs designed and verified in XState (see fsm/xstate/)"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [

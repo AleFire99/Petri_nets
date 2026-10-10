@@ -1,7 +1,7 @@
 """Fill station EFSM, hand-written from the verified XState model.
 
-Design: docs/fsm/fill-station.md. Model: xstate/src/machines/fillStation.machine.ts.
-Proven equal to the model by replaying xstate/generated/vectors/fill-station.json
+Design: fsm/docs/fill-station.md. Model: fsm/xstate/src/machines/fillStation.machine.ts.
+Proven equal to the model by replaying fsm/xstate/generated/vectors/fill-station.json
 (tests/fsm/test_fill_station.py). Plain Python on purpose: the same structure
 ports to a PLC function block or a C++ class.
 """

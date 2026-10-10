@@ -5,14 +5,14 @@
 - `uv run pytest` — tests
 - `uv run ruff check` / `uv run ruff format` — lint / format
 - `uv run mypy src` — type check
-- `cd xstate && npm run verify` — XState typecheck + export + analyze + vitest; commit `xstate/generated/`
+- `cd fsm/xstate && npm run verify` — XState typecheck + export + analyze + vitest; commit `fsm/xstate/generated/`
 
 ## Layout
-- `xstate/` — every FSM: XState v5 machines, explorer, vector/ST export (rules: `xstate/AGENTS.md`); `xstate/generated/` is read by pytest
+- `fsm/xstate/` — every FSM: XState v5 machines, explorer, vector/ST export (rules: `fsm/xstate/AGENTS.md`); `fsm/xstate/generated/` is read by pytest
 - `src/petrilab/petri/` — Petri net implementations; `src/petrilab/fsm/` — only hand-written FSM implementations proven against XState vectors
 - `tests/` — pytest tests, mirroring `src/`
-- `spikes/petri/` — throwaway library evaluations backing the Petri docs
-- `docs/fsm/`, `docs/petri/` — designs (Markdown + fenced Mermaid; no committed images)
+- `petri/spikes/` — throwaway library evaluations backing the Petri docs
+- `fsm/docs/`, `petri/docs/` — designs (Markdown + fenced Mermaid; no committed images)
 
 ## Git flow
 One feature branch per phase (`feat/…`, `docs/…`, `chore/…`), Conventional Commits, PR to `main`, squash merge.

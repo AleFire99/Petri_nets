@@ -1,4 +1,4 @@
-"""Coloured net example (docs/petri/colored.md), built directly with SNAKES."""
+"""Coloured net example (petri/docs/colored.md), built directly with SNAKES."""
 
 from snakes.nets import Expression, PetriNet, Place, Transition, Variable
 

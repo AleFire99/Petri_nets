@@ -1,4 +1,4 @@
-"""Stochastic Petri net: CTMC steady state from the reachability graph (docs/petri/stochastic.md)."""
+"""Stochastic Petri net: CTMC steady state from the reachability graph (petri/docs/stochastic.md)."""
 
 import numpy as np
 

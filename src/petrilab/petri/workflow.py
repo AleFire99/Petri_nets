@@ -1,4 +1,4 @@
-"""Workflow-net checks and soundness (docs/petri/workflow.md)."""
+"""Workflow-net checks and soundness (petri/docs/workflow.md)."""
 
 from typing import TYPE_CHECKING
 

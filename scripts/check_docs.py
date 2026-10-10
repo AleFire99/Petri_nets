@@ -1,7 +1,7 @@
 """Documentation coherence checks (run in CI): `uv run python scripts/check_docs.py`.
 
 - relative Markdown links resolve to existing files
-- every doc in docs/<topic>/ is linked from that folder's README.md
+- every doc in <topic>/docs/ is linked from that folder's README.md
 - code fences are balanced and mermaid blocks are non-empty
 """
 
@@ -43,7 +43,7 @@ def check_fences(md: Path) -> list[str]:
 
 def check_indexes() -> list[str]:
     errors = []
-    for topic in sorted(p for p in (ROOT / "docs").iterdir() if p.is_dir()):
+    for topic in sorted(ROOT.glob("*/docs")):
         readme = topic / "README.md"
         if not readme.exists():
             errors.append(f"{topic.relative_to(ROOT)}: missing README.md index")
@@ -61,7 +61,7 @@ def main() -> int:
     docs = [
         ROOT / "README.md",
         ROOT / "CLAUDE.md",
-        *sorted((ROOT / "docs").rglob("*.md")),
+        *sorted(ROOT.glob("*/docs/**/*.md")),
     ]
     errors = check_indexes()
     for md in docs:

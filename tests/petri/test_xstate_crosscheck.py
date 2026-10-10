@@ -1,8 +1,8 @@
 """Cross-formalism check: XState EFSM vs Petri net for the dining philosophers.
 
-xstate/src/machines/philosophers.machine.ts models each philosopher as a parallel
+fsm/xstate/src/machines/philosophers.machine.ts models each philosopher as a parallel
 region and forks as context variables. Its exhaustive exploration
-(xstate/generated/reports/philosophers-*.json) must give the same reachability
+(fsm/xstate/generated/reports/philosophers-*.json) must give the same reachability
 graph size and the same dead states as the Petri net in examples.py.
 """
 
@@ -13,7 +13,9 @@ import pytest
 
 from petrilab.petri import examples
 
-REPORTS = Path(__file__).resolve().parents[2] / "xstate" / "generated" / "reports"
+REPORTS = (
+    Path(__file__).resolve().parents[2] / "fsm" / "xstate" / "generated" / "reports"
+)
 
 
 @pytest.mark.parametrize("n_phil", [2, 3, 4])
