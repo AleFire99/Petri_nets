@@ -10,7 +10,7 @@ import { specs } from '../src/specs';
  * trustworthy oracle for the Python implementations in src/petrilab/fsm.
  */
 for (const spec of specs) {
-  const path = `generated/${spec.slug}/vectors.json`;
+  const path = `generated/vectors/${spec.slug}.json`;
   if (!existsSync(path)) continue;
   const file = JSON.parse(readFileSync(path, 'utf8')) as VectorFile;
 

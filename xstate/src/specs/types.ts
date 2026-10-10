@@ -3,7 +3,7 @@ import type { Ev, Snap } from '../analysis/explore';
 
 /** Verification spec for one machine. Analyzer, tests and exporter iterate these. */
 export interface MachineSpec<M extends AnyStateMachine> {
-  /** Folder name under generated/. Python tests read files by this name. */
+  /** File name under generated/{vectors,reports}/. Python tests read files by this name. */
   slug: string;
   /** Human-readable name for logs. */
   name: string;
@@ -21,7 +21,11 @@ export interface MachineSpec<M extends AnyStateMachine> {
   maxDepth?: number;
   /** What CI must see. A design that is MEANT to deadlock says so here. */
   expect: { deadlocks: number; blocking: number };
-  /** Export test vectors (default: when no deadlock is expected). */
+  /** Export test vectors for a hand-written implementation (src/petrilab/...). */
   vectors?: boolean;
+  /** Export report.json (state/edge/deadlock counts) for a Python cross-check. */
+  report?: boolean;
+  /** Mermaid export (default true). Off for factory-built analysis machines. */
+  diagram?: boolean;
   codegen?: { st?: boolean };
 }
