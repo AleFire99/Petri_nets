@@ -50,3 +50,16 @@ Based on documentation and what the spikes actually demonstrated.
 | Moore vs Mealy | plain Python tables + `python-statemachine` for Moore | Output models are a property of the design, not library features; keep them tiny and compare outputs. |
 
 `transitions` is not selected: it matches `python-statemachine` on most axes, lacks history and has less deterministic timers. `automata-lib` is the right tool for DFA equivalence checks, e.g. comparing Moore and Mealy machines, and is used (dev dependency) to prove Moore and Mealy equivalence exactly in `tests/fsm/test_moore_mealy.py`. Total runtime dependencies for the FSM phase: `python-statemachine` and `sismic`.
+
+## Addendum: XState (TypeScript) as design layer
+
+Checked on npm on 2026-10-10: [`xstate`](https://www.npmjs.com/package/xstate) 5.33.2 (v6 is alpha only). Not a Python library, so it does not replace the choices above; it sits in front of them. What it adds that no Python candidate has:
+
+| Criterion | XState v5 |
+|-----------|-----------|
+| Visual editing | VS Code extension and Stately Studio edit the machine as a diagram and write code back |
+| Pure transition function | `transition(machine, snapshot, event)` without side effects or timers: enables exhaustive exploration |
+| Deterministic time | `SimulatedClock`, like sismic |
+| Typing | `setup({ types })`; typegen is v4 only and not needed |
+
+Decision: design and verify in XState, implement in Python (or ST / C++), prove equivalence with generated test vectors. Details and results: [xstate.md](xstate.md).

@@ -11,5 +11,6 @@ Each design is a Markdown file with a description, use case, a Mermaid `stateDia
 | 5 | [History](history.md) | shallow / deep history | washing machine |
 | 6 | [Parallel](parallel.md) | orthogonal regions | text styling |
 | 7 | [Moore vs Mealy](moore-mealy.md) | output models | "11" detector |
+| 8 | [Fill station](fill-station.md) | all of the above in one control EFSM | tank fill / heat / drain |
 
-Next: [library evaluation](library-evaluation.md) (spikes in `spikes/fsm/`).
+Next: [library evaluation](library-evaluation.md) (spikes in `spikes/fsm/`), then [XState as design and verification layer](xstate.md) (subproject `xstate/`).

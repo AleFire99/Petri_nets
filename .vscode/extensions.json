@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "statelyai.stately-vscode",
+    "vitest.explorer",
+    "bierner.markdown-mermaid",
+    "ms-python.python",
+    "charliermarsh.ruff"
+  ]
+}
