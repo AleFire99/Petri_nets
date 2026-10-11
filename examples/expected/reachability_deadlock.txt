@@ -1,0 +1,10 @@
+-- dining philosophers, n = 3
+  philosophers_3_naive: 14 markings, 1 dead, live=False
+    shortest trace to deadlock: ['takeLeft0', 'takeLeft1', 'takeLeft2']
+    dead marking: {'HasLeft0': 1, 'HasLeft1': 1, 'HasLeft2': 1}
+  philosophers_3_atomic: 4 markings, 0 dead, live=True
+
+-- mutex: safety (never both in Crit) and liveness
+  8 markings, both critical: 0, safe(1-bounded): True
+  deadlock-free: True, live: True
+  trace to Crit2: ['request2', 'enter2']

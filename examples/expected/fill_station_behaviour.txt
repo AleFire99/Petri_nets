@@ -1,0 +1,22 @@
+-- normal cycle
+  start                        state=idle              outputs=[] retries=0 last_fault=None
+  START                        state=running.filling   outputs=['INLET'] retries=0 last_fault=None
+  LEVEL_HIGH                   state=running.heating   outputs=['HEATER'] retries=0 last_fault=None
+  TEMP_OK                      state=running.settling  outputs=[] retries=0 last_fault=None
+  tick 4999 ms (settling)      state=running.settling  outputs=[] retries=0 last_fault=None
+  tick 1 ms (settle done)      state=running.draining  outputs=['OUTLET'] retries=0 last_fault=None
+  LEVEL_LOW                    state=idle              outputs=[] retries=0 last_fault=None
+
+-- fill timeout, retries, lock-out
+  attempt 1: timeout           state=fault             outputs=[] retries=0 last_fault=FILL_TIMEOUT
+  RESET                        state=idle              outputs=[] retries=1 last_fault=FILL_TIMEOUT
+  attempt 2: timeout           state=fault             outputs=[] retries=1 last_fault=FILL_TIMEOUT
+  RESET                        state=idle              outputs=[] retries=2 last_fault=FILL_TIMEOUT
+  attempt 3: timeout           state=fault             outputs=[] retries=2 last_fault=FILL_TIMEOUT
+  RESET                        state=lockedOut         outputs=[] retries=2 last_fault=FILL_TIMEOUT
+  MAINT_RESET                  state=idle              outputs=[] retries=0 last_fault=None
+
+-- emergency stop from anywhere
+  START, ESTOP                 state=emergency         outputs=[] retries=0 last_fault=None
+  START (ignored)              state=emergency         outputs=[] retries=0 last_fault=None
+  ESTOP_RELEASE                state=idle              outputs=[] retries=0 last_fault=None

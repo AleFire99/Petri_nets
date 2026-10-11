@@ -1,0 +1,24 @@
+-- jobs net: guard n > 1
+  M0: Jobs={1, 2, 3} Results={}
+  all bindings of square: 10 (n in 0..9)
+  enabled in M0: [{'n': 2}, {'n': 3}]
+  fire square<n=1>: NotEnabledError: square<n=1> not enabled
+  Jobs={1, 2, 3} Results={} -> ['square<n=2>', 'square<n=3>']
+  Jobs={1, 3} Results={4} -> ['square<n=3>']
+  Jobs={1, 2} Results={9} -> ['square<n=2>']
+  Jobs={1} Results={4, 9} -> []
+  dead: ['Jobs={1} Results={4, 9}']
+  SNAKES agrees: 4 markings, 1 dead
+
+-- philosophers folded (n = 3)
+  M0: Eat={} Fork={0, 1, 2} HasLeft={} Think={0, 1, 2}
+  takeLeft<p=1>: Eat={} Fork={0, 2} HasLeft={1} Think={0, 2}
+  enabled takeRight: [{'p': 1}]
+  CPN: 14 markings, P/T: 14 markings
+  deadlock trace: ['takeLeft<p=0>', 'takeLeft<p=1>', 'takeLeft<p=2>']
+
+-- unfolding
+  4 CPN places -> 12 P/T places
+  3 CPN transitions -> 9 P/T transitions
+  takeRight<p=2> pre: {'HasLeft[2]': 1, 'Fork[0]': 1}
+  unfolded reachability: 14 markings

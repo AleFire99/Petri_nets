@@ -1,0 +1,14 @@
+unbounded_producer: places ['Ready', 'Buffer']
+  (1, 0): produce -> (1, ω)
+  (1, ω): produce -> (1, ω), consume -> (1, ω)
+  bounded: False, bounds: {'Ready': 1, 'Buffer': 'ω'}
+  plain reachability does not terminate:
+    StateSpaceLimitError: more than 1000 states
+  coverable Buffer >= 1000: True
+  coverable Ready >= 2: False
+
+producer_consumer_2: places ['ProdIdle', 'Free', 'Buffer', 'ConsIdle']
+  (1, 2, 0, 1): produce -> (1, 1, 1, 1)
+  (1, 1, 1, 1): produce -> (1, 0, 2, 1), consume -> (1, 2, 0, 1)
+  (1, 0, 2, 1): consume -> (1, 1, 1, 1)
+  bounded: True, bounds: {'ProdIdle': 1, 'Free': 2, 'Buffer': 2, 'ConsIdle': 1}
