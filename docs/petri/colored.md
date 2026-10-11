@@ -26,3 +26,6 @@ Token `1` is blocked by the guard: the final marking is **dead but not empty**, 
 ## Properties
 - 4 reachable markings (firing 2 and 3 in either order): initial, `{1,3}/{4}`, `{1,2}/{9}`, `{1}/{4,9}`.
 - Exactly one dead marking, `{1}/{4,9}`.
+
+## Hand-written engine
+The same net in [`cpn_examples.jobs()`](../../src/petrilab/petri/cpn_examples.py) gives the same 4 markings and the same dead marking without SNAKES. Formal definition, a worked philosophers example and unfolding: [cpn-formal.md](cpn-formal.md).

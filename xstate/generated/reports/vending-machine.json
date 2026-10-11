@@ -1,0 +1,8 @@
+{
+ "machine": "vendingMachine",
+ "bounded": true,
+ "stateCount": 53,
+ "edgeCount": 129,
+ "deadlocks": [],
+ "blocking": 0
+}

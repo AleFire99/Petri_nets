@@ -1,0 +1,22 @@
+-- run (docs/fsm/efsm-formal.md, section 3)
+  start: idle {credit=0, dispensed=0, rejected=0}
+  {'type': 'insert', 'amount': 50}: fired -> has_credit {credit=50, dispensed=0, rejected=0}
+  {'type': 'select'}: fired -> has_credit {credit=50, dispensed=0, rejected=1}
+  {'type': 'insert', 'amount': 50}: fired -> has_credit {credit=100, dispensed=0, rejected=1}
+  {'type': 'select'}: fired -> has_credit {credit=25, dispensed=1, rejected=1}
+  {'type': 'refund'}: fired -> idle {credit=0, dispensed=1, rejected=1}
+  {'type': 'select'}: ignored -> idle {credit=0, dispensed=1, rejected=1}
+
+-- invalid transitions
+  strict: InvalidTransitionError: no transition for select in idle {credit=0, dispensed=0, rejected=0}
+  UnknownEventError: 'kick' not in alphabet ('insert', 'refund', 'select')
+
+-- exploration (coins 0/25/50/100, depth 4), same counts as XState
+  configurations: 53, edges: 129, frontier: 26
+  deadlocks: 0, invariant violations: 0
+  overlapping guards resolved by priority: 33, e.g.
+    has_credit {credit=100, dispensed=0, rejected=0} on select: ['has_credit --select [credit >= price] / dispense--> has_credit', 'has_credit --select [else] / rejected += 1--> has_credit']
+
+-- buggy variant: refund keeps the credit
+  24 violating configurations; shortest counterexample:
+    invariant 'idle means no credit' fails in idle {credit=25, dispensed=0, rejected=0} after ['insert(amount=25)', 'refund']

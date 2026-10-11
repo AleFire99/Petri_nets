@@ -2,8 +2,8 @@ import { assign, setup } from 'xstate';
 
 /**
  * Vending machine. Same design as docs/fsm/extended.md and
- * src/petrilab/fsm/extended.py (python-statemachine). State ids and context
- * names match the Python implementation so test vectors replay 1:1.
+ * src/petrilab/fsm/vending_machine.py (generic Python EFSM engine). State ids,
+ * context names and transition order match, so test vectors replay 1:1.
  */
 export const PRICE = 75;
 
