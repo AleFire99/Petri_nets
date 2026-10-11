@@ -61,6 +61,8 @@ export const vendingSpec: MachineSpec<typeof vendingMachine> = {
   },
   maxDepth: 4, // credit and counters are unbounded
   expect: ok,
+  vectors: true, // replayed by src/petrilab/fsm/vending_machine.py
+  report: true, // state/edge counts cross-checked by the Python EFSM explorer
 };
 
 // docs/fsm/timed.md

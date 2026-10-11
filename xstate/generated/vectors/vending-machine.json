@@ -1,0 +1,8038 @@
+{
+ "machine": "vendingMachine",
+ "initial": {
+  "state": [
+   "idle"
+  ],
+  "outputs": [],
+  "context": {
+   "credit": 0,
+   "dispensed": 0,
+   "rejected": 0
+  }
+ },
+ "vectors": [
+  {
+   "id": "T1",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T2",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T3",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T4",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T5",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 75,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T6",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 125,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T7",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T8",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "refund"
+     },
+     "expect": {
+      "state": [
+       "idle"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 0,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T9",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 75,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T10",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T11",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 150,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T12",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T13",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "refund"
+     },
+     "expect": {
+      "state": [
+       "idle"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 0,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T14",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 125,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T15",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 150,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T16",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 200,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T17",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T18",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "refund"
+     },
+     "expect": {
+      "state": [
+       "idle"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 0,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T19",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 75,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T20",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 75,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 125,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T21",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 75,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 175,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T22",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 75,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "idle"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 0,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T23",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 75,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "refund"
+     },
+     "expect": {
+      "state": [
+       "idle"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 0,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T24",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 125,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 150,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T25",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 125,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 175,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T26",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 125,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 225,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T27",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 125,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T28",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 125,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "refund"
+     },
+     "expect": {
+      "state": [
+       "idle"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 0,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T29",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T30",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 75,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T31",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 125,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T32",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 2
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T33",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "refund"
+     },
+     "expect": {
+      "state": [
+       "idle"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 0,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T34",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 150,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 175,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T35",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 150,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 200,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T36",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 150,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 250,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T37",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 150,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 75,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T38",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 150,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "refund"
+     },
+     "expect": {
+      "state": [
+       "idle"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 0,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T39",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 75,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T40",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T41",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 150,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T42",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 2
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T43",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "refund"
+     },
+     "expect": {
+      "state": [
+       "idle"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 0,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T44",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 200,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 225,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T45",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 200,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 250,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T46",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 200,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 300,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T47",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 200,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 125,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T48",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 200,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "refund"
+     },
+     "expect": {
+      "state": [
+       "idle"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 0,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T49",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T50",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 75,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T51",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 125,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T52",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 1,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T53",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "refund"
+     },
+     "expect": {
+      "state": [
+       "idle"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 0,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T54",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 75,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 175,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 200,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T55",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 75,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 175,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 225,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T56",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 75,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 175,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 275,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T57",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 75,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 175,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T58",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 75,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 175,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "refund"
+     },
+     "expect": {
+      "state": [
+       "idle"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 0,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T59",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 75,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "idle"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 0,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T60",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 75,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "idle"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 0,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T61",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 75,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "idle"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 0,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T62",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 125,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 225,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 250,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T63",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 125,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 225,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 275,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T64",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 125,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 225,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 325,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T65",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 125,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 225,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 150,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T66",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 125,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 225,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "refund"
+     },
+     "expect": {
+      "state": [
+       "idle"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 0,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T67",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 125,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 75,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T68",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 125,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T69",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 125,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 150,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T70",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 125,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 1,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T71",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 125,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "refund"
+     },
+     "expect": {
+      "state": [
+       "idle"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 0,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T72",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 75,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T73",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 75,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 125,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T74",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 75,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 175,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T75",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 75,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "idle"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 0,
+       "dispensed": 1,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T76",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 75,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "refund"
+     },
+     "expect": {
+      "state": [
+       "idle"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 0,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T77",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 125,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 150,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T78",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 125,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 175,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T79",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 125,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 225,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T80",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 125,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 1,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T81",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 125,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "refund"
+     },
+     "expect": {
+      "state": [
+       "idle"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 0,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T82",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 2
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 2
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T83",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 2
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 75,
+       "dispensed": 0,
+       "rejected": 2
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T84",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 2
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 125,
+       "dispensed": 0,
+       "rejected": 2
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T85",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 2
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 3
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T86",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 2
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "refund"
+     },
+     "expect": {
+      "state": [
+       "idle"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 0,
+       "dispensed": 0,
+       "rejected": 2
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T87",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "refund"
+     },
+     "expect": {
+      "state": [
+       "idle"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 0,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T88",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "refund"
+     },
+     "expect": {
+      "state": [
+       "idle"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 0,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T89",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "refund"
+     },
+     "expect": {
+      "state": [
+       "idle"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 0,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T90",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 150,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 250,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 275,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T91",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 150,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 250,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 300,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T92",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 150,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 250,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 350,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T93",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 150,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 250,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 175,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T94",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 150,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 250,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "refund"
+     },
+     "expect": {
+      "state": [
+       "idle"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 0,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T95",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 150,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 75,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T96",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 150,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 75,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 125,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T97",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 150,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 75,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 175,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T98",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 150,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 75,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "idle"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 0,
+       "dispensed": 2,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T99",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 150,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 75,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "refund"
+     },
+     "expect": {
+      "state": [
+       "idle"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 0,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T100",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 125,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T101",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 150,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T102",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 200,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T103",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 1,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T104",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "refund"
+     },
+     "expect": {
+      "state": [
+       "idle"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 0,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T105",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 150,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 175,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T106",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 150,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 200,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T107",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 150,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 250,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T108",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 150,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 75,
+       "dispensed": 1,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T109",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 150,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "refund"
+     },
+     "expect": {
+      "state": [
+       "idle"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 0,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T110",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 2
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 75,
+       "dispensed": 0,
+       "rejected": 2
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T111",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 2
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 2
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T112",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 2
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 150,
+       "dispensed": 0,
+       "rejected": 2
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T113",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 2
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 3
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T114",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 0,
+       "rejected": 2
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "refund"
+     },
+     "expect": {
+      "state": [
+       "idle"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 0,
+       "dispensed": 0,
+       "rejected": 2
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T115",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 200,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 300,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 325,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T116",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 200,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 300,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 350,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T117",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 200,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 300,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 400,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T118",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 200,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 300,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 225,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T119",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 200,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 300,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "refund"
+     },
+     "expect": {
+      "state": [
+       "idle"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 0,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T120",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 200,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 125,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 150,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T121",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 200,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 125,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 175,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T122",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 200,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 125,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 225,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T123",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 200,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 125,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 2,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T124",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 200,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 125,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "refund"
+     },
+     "expect": {
+      "state": [
+       "idle"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 0,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T125",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 1,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 25
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 50,
+       "dispensed": 1,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T126",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 1,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 50
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 75,
+       "dispensed": 1,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T127",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 1,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 125,
+       "dispensed": 1,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T128",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 1,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 1,
+       "rejected": 2
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "T129",
+   "steps": [
+    {
+     "event": {
+      "type": "insert",
+      "amount": 100
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 100,
+       "dispensed": 0,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 1,
+       "rejected": 0
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "select"
+     },
+     "expect": {
+      "state": [
+       "has_credit"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 25,
+       "dispensed": 1,
+       "rejected": 1
+      }
+     }
+    },
+    {
+     "event": {
+      "type": "refund"
+     },
+     "expect": {
+      "state": [
+       "idle"
+      ],
+      "outputs": [],
+      "context": {
+       "credit": 0,
+       "dispensed": 1,
+       "rejected": 1
+      }
+     }
+    }
+   ]
+  }
+ ]
+}

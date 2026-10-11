@@ -5,6 +5,7 @@ Markings are tuples of ints ordered like ``PTNet.places``.
 """
 
 from collections import deque
+from collections.abc import Callable
 from dataclasses import dataclass, field
 
 Marking = tuple[int, ...]
@@ -127,6 +128,35 @@ class PTNet:
                     seen.add(nxt)
                     queue.append(nxt)
         return graph
+
+    def trace_to(
+        self, target: Callable[[Marking], bool], max_states: int = 100_000
+    ) -> list[str] | None:
+        """Shortest firing sequence from the initial marking to one satisfying ``target``.
+
+        Breadth-first, so the trace is minimal in length. ``None`` if no reachable marking
+        satisfies ``target``.
+        """
+        start = self.initial_marking
+        parent: dict[Marking, tuple[Marking, str] | None] = {start: None}
+        queue = deque([start])
+        while queue:
+            m = queue.popleft()
+            if target(m):
+                trace: list[str] = []
+                step = parent[m]
+                while step is not None:
+                    m, t = step
+                    trace.append(t)
+                    step = parent[m]
+                return trace[::-1]
+            for t, nxt in self.successors(m):
+                if nxt not in parent:
+                    if len(parent) >= max_states:
+                        raise StateSpaceLimitError(f"more than {max_states} states")
+                    parent[nxt] = (m, t)
+                    queue.append(nxt)
+        return None
 
     # -- structure --------------------------------------------------------------------------
     def incidence(self) -> list[list[int]]:
