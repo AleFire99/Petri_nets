@@ -1,6 +1,7 @@
 """Documentation coherence checks (run in CI): `uv run python scripts/check_docs.py`.
 
-- relative Markdown links resolve to existing files
+- relative Markdown links resolve to existing files (README, CLAUDE, study plan, docs/,
+  examples/, exercises/)
 - every doc in docs/<topic>/ is linked from that folder's README.md
 - code fences are balanced and mermaid blocks are non-empty
 """
@@ -61,7 +62,10 @@ def main() -> int:
     docs = [
         ROOT / "README.md",
         ROOT / "CLAUDE.md",
+        ROOT / "study-plan.md",
         *sorted((ROOT / "docs").rglob("*.md")),
+        *sorted((ROOT / "examples").rglob("*.md")),
+        *sorted((ROOT / "exercises").rglob("*.md")),
     ]
     errors = check_indexes()
     for md in docs:
