@@ -3,6 +3,8 @@
 ## Decision (2026-10-10)
 Design, simulate and verify every FSM in [XState v5](https://www.npmjs.com/package/xstate) (5.33.2; v6 is alpha only). Implement in the target language by hand and prove it against model-generated test vectors. Workflow: [xstate.md](xstate.md).
 
+Update (2026-10-11): a dependency-free Python EFSM engine ([`efsm.py`](../../src/petrilab/fsm/efsm.py), ~250 lines) was added for study: it makes the formal definition in [efsm-formal.md](efsm-formal.md) executable. It does not replace XState: the vending machine built on it is proven against the XState vectors and report, like the fill station.
+
 ## Why
 | Need | XState v5 | Best Python option found |
 |------|-----------|--------------------------|

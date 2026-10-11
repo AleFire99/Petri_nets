@@ -95,9 +95,18 @@ def binding_label(t: str, b: Binding) -> str:
     return f"{t}<{', '.join(f'{k}={b[k]!r}' for k in sorted(b))}>"
 
 
-def _key(c: Colour) -> tuple[str, str]:
-    # tokens of different types cannot be compared directly; sort by type then repr
-    return (type(c).__name__, repr(c))
+def _sorted_tokens(
+    items: Iterable[tuple[Colour, int]],
+) -> tuple[tuple[Colour, int], ...]:
+    """Canonical token order: natural order within a type (1 < 9 < 25), types by name.
+
+    Falls back to ``repr`` when values of one type are not comparable (e.g. mixed tuples).
+    """
+    pairs = list(items)
+    try:
+        return tuple(sorted(pairs, key=lambda x: (type(x[0]).__name__, x[0])))
+    except TypeError:
+        return tuple(sorted(pairs, key=lambda x: (type(x[0]).__name__, repr(x[0]))))
 
 
 @dataclass
@@ -143,7 +152,7 @@ class CPN:
     @staticmethod
     def freeze(m: Mapping[str, Multiset]) -> FrozenMarking:
         return tuple(
-            (p, tuple(sorted(((c, n) for c, n in m[p].items() if n > 0), key=lambda x: _key(x[0]))))
+            (p, _sorted_tokens((c, n) for c, n in m[p].items() if n > 0))
             for p in sorted(m)
         )  # fmt: skip
 

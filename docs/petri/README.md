@@ -8,11 +8,13 @@
 
 Firing rule: a transition is enabled in `M` if every input place has at least the arc weight in tokens (plus inhibitor/read conditions); firing removes input tokens and adds output tokens.
 
+Theory first: [foundations](foundations.md) (definitions, firing rule, properties, invariants, worked example), [coverability graph](coverability.md) (unbounded nets), [coloured nets, formally](cpn-formal.md) (multisets, bindings, unfolding). Bibliography: [references](../references.md).
+
 | # | Design | Variant | Verified property |
 |---|--------|---------|-------------------|
 | 1 | [Place/transition net](place-transition.md) | weights, conservation | reachability, boundedness, invariants |
 | 2 | [Inhibitor & read arcs](inhibitor-read.md) | extended arcs | boundedness via inhibitor |
-| 3 | [Coloured net](colored.md) | typed tokens + guards | guard blocks transition |
+| 3 | [Coloured net](colored.md) | typed tokens + guards | guard blocks transition; same result in the hand-written [CPN engine](cpn-formal.md) |
 | 4 | [Timed net](timed.md) | firing intervals | timeout transition never fires |
 | 5 | [Stochastic net](stochastic.md) | exponential rates | steady-state vs analytic M/M/1/K |
 | 6 | [Hierarchical net](hierarchical.md) | substitution transition | flattening equals expected net |
